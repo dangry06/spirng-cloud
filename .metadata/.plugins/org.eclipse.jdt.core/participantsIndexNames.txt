@@ -1,3 +1,0 @@
-INDEX VERSION 1.130
-D:\work\Dangry\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4243917822.index
-\ladon\src\main\java

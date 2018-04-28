@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;Application.java&apos; to &apos;spring-boot-redis/src/main/java/com.dangry.boot&apos;&#x0D;&#x0A;- Original project: &apos;spring-boot-scheduler&apos;&#x0D;&#x0A;- Destination element: &apos;spring-boot-redis/src/main/java/com.dangry.boot&apos;&#x0D;&#x0A;- Original element: &apos;com.dangry.boot.Application.java&apos;" description="Copy compilation unit" destination="=spring-boot-redis/src\/main\/java&lt;com.dangry.boot" element1="/src\/main\/java&lt;com.dangry.boot{Application.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1524819278279" units="1" version="1.0"/>
-</session>

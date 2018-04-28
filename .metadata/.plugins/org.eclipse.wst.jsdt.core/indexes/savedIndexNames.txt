@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+D:\work\Dangry\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-867362881.index
-3317443474.index
-913626348.index
-1454857622.index
-308755406.index
-1674114028.index
