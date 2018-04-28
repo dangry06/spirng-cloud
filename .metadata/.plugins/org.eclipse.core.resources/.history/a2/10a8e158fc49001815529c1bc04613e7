@@ -1,0 +1,5 @@
+package com.dangry.boot.model;
+
+public class User {
+
+}

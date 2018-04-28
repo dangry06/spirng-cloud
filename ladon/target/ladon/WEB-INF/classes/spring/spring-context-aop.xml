@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+  
+	<!-- ================================================ -->
+	<!--       transaction config                         -->
+	<!-- ================================================ -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" rollback-for="Exception" propagation="REQUIRED"/>
+			<tx:method name="find*" read-only="true"/>
+			<tx:method name="get*" read-only="true"/>
+			<tx:method name="query*" read-only="true"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- ====================================================== -->
+	<!-- 任何Service类的public方法 ,                              -->
+	<!-- aop:advisor 就是一个Aspect，定义了Advice与pointcut的组合       -->
+	<!-- ====================================================== -->
+	<aop:config proxy-target-class="true">
+		<aop:pointcut id="serviceOperation" expression="(execution(* com.ladon..*.*ServiceImpl.*(..)) or execution(* com.ladon..*.*Service.*(..)))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperation" order="1"/>
+	</aop:config>
+	
+</beans>

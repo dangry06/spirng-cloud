@@ -1,0 +1,5 @@
+package com.dangry.boot.controller;
+
+public class UserController {
+
+}

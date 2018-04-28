@@ -1,0 +1,5 @@
+package com.dangry.boot.redis;
+
+public class User {
+
+}
