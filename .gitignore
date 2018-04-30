@@ -1,9 +1,13 @@
 # Eclipse
 .classpath
 .project
-.settings/
+.settings
 .metadata
 .recommenders
+
+.apt_generated
+.factorypath
+.springBeans
 
 # Intellij
 .idea/
